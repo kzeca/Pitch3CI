@@ -5,9 +5,6 @@ public class Usuario {
     private int dinheiro = 100000;
     private String email;
     private String nome;
-    private int teste;
-
-    // Teste
 
     public Usuario(){
 
