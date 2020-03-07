@@ -129,7 +129,7 @@
         android:backgroundTint="#8AB1C4"
         android:text="INVESTIR"
         android:textColor="#fff"
-        android:textSize="21sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline16"
         app:layout_constraintEnd_toStartOf="@+id/guideline19"
         app:layout_constraintStart_toStartOf="@+id/guideline53"
@@ -184,12 +184,13 @@
             android:gravity="center|start"
             android:text="R$ 100 000"
             android:textColor="#fff"
-            android:textSize="50sp"
+            android:textSize="43sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline30"
             app:layout_constraintStart_toStartOf="@+id/guideline29"
-            app:layout_constraintTop_toTopOf="@+id/guideline28" />
+            app:layout_constraintTop_toTopOf="@+id/guideline28"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView4"
@@ -198,7 +199,7 @@
             android:gravity="bottom|start"
             android:text="SALDO DISPONÍVEL"
             android:textColor="#fff"
-            android:textSize="19sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline28"
             app:layout_constraintEnd_toStartOf="@+id/guideline30"
             app:layout_constraintHorizontal_bias="0.0"
@@ -224,7 +225,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="4dp" />
+            app:layout_constraintGuide_percent="0.093023255" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline36"
@@ -255,7 +256,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.13" />
 
         <TextView
             android:id="@+id/textView7"
@@ -274,7 +275,7 @@
             android:gravity="center|start"
             android:text="Equipe mais investida"
             android:textColor="#fff"
-            android:textSize="12sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline36"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
             app:layout_constraintHorizontal_bias="0.0"
@@ -289,7 +290,7 @@
             android:gravity="center|start"
             android:text="Nome 1, Nome 2 e Nome 3"
             android:textColor="#fff"
-            android:textSize="14sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline35"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -357,7 +358,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.13" />
 
         <TextView
             android:id="@+id/textView15"
@@ -366,7 +367,7 @@
             android:gravity="center|start"
             android:text="Segunda equipe mais investida"
             android:textColor="#fff"
-            android:textSize="12sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline42"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -380,7 +381,7 @@
             android:gravity="center|start"
             android:text="Nome 1, Nome 2 e Nome 3"
             android:textColor="#fff"
-            android:textSize="14sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline41"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline47"
@@ -402,7 +403,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.13" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline44"
@@ -416,7 +417,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="17dp" />
+            app:layout_constraintGuide_percent="0.4" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline45"
@@ -452,7 +453,7 @@
             android:gravity="center|start"
             android:text="Terceira equipe mais investida"
             android:textColor="#fff"
-            android:textSize="12sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline48"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline49"
@@ -465,7 +466,7 @@
             android:gravity="center|start"
             android:text="Nome 1, Nome 2 e Nome 3"
             android:textColor="#fff"
-            android:textSize="14sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline45"
             app:layout_constraintEnd_toEndOf="@+id/textView11"
             app:layout_constraintStart_toStartOf="@+id/guideline49"
@@ -480,7 +481,7 @@
         android:gravity="bottom"
         android:text="Olá, Arley Novais"
         android:textColor="@color/azulDebora"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline50"
         app:layout_constraintEnd_toStartOf="@+id/guideline51"
         app:layout_constraintHorizontal_bias="0.0"
@@ -532,6 +533,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline23"
-        app:srcCompat="@drawable/googleg_standard_color_18" />
+        app:srcCompat="@drawable/copper" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
