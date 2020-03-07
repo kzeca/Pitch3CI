@@ -35,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(email.getText().length()==0 || password.getText().length()==0){
+
+                user.setEmail(email.getText().toString());
+                user.setRa(password.getText().toString());
+
+                if(user.getEmail().isEmpty() || user.getRa().isEmpty()){
                     Toast.makeText(getApplicationContext(),
                             "Os campos de email e senha são obrigatórios",
                             Toast.LENGTH_SHORT).show();
@@ -52,9 +56,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView.OnEditorActionListener editorListener = new TextView.OnEditorActionListener() {
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+            user.setEmail(email.getText().toString());
+            user.setRa(password.getText().toString());
+
             switch (actionId) {
                 case EditorInfo.IME_ACTION_SEND:
-                    if(email.getText().length()==0 || password.getText().length()==0){
+                    if(user.getEmail().isEmpty() || user.getRa().isEmpty()){
                         Toast.makeText(getApplicationContext(),
                                 "Os campos de email e senha são obrigatórios",
                                 Toast.LENGTH_SHORT).show();
