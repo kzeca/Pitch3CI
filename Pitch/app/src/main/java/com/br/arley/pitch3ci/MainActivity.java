@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextInputEditText email;
     TextInputEditText password;
-    static Usuario user;
+    Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

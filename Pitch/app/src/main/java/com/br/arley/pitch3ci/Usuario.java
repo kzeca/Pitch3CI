@@ -4,7 +4,7 @@ public class Usuario {
     private String ra;
     private int dinheiro = 100000;
     private String email;
-    private String nome;
+    private static String nome;
 
     public Usuario(){
 
