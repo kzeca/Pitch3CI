@@ -126,7 +126,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
+            android:id="@+id/activity_login_edt_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
@@ -151,7 +151,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Password"
-            android:id="@+id/password"
+            android:id="@+id/activity_login_edt_password"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="16sp"
