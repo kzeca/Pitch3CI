@@ -19,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         activity_home_tv_nome = findViewById(R.id.activity_home_tv_nome);
-        activity_home_tv_nome.setText(String.format("Bem-vindo, %s!", user.getNome()));
+        activity_home_tv_nome.setText(String.format(user.getEmail()));
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

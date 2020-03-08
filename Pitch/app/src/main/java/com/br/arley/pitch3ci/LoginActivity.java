@@ -1,5 +1,6 @@
 package com.br.arley.pitch3ci;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,13 +11,19 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextInputEditText email;
-    TextInputEditText password;
+    TextInputEditText editEmail;
+    TextInputEditText editPassword;
     Usuario user;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        email = findViewById(R.id.activity_login_edt_email);
-        password = findViewById(R.id.activity_login_edt_password);
-        password.setOnEditorActionListener(editorListener);
-        email.setOnEditorActionListener(editorListener);
+        editEmail = findViewById(R.id.activity_login_edt_email);
+        editPassword = findViewById(R.id.activity_login_edt_password);
+        editPassword.setOnEditorActionListener(editorListener);
+        editEmail.setOnEditorActionListener(editorListener);
 
 
 
@@ -36,18 +43,34 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                user.setEmail(email.getText().toString());
-                user.setRa(password.getText().toString());
+                user.setEmail(editEmail.getText().toString());
+                user.setRa(editPassword.getText().toString());
 
                 if(user.getEmail().isEmpty() || user.getRa().isEmpty()){
                     Toast.makeText(getApplicationContext(),
                             "Os campos de email e senha são obrigatórios",
                             Toast.LENGTH_SHORT).show();
                 }else {
-                    TextInputEditText nomeEmail = findViewById(R.id.activity_login_edt_email);
-                    user.setNome(nomeEmail.getText().toString());
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    String email = user.getEmail();
+                    String password = user.getRa();
+                    login(email, password);
+                }
+            }
+        });
+
+    }
+
+    private void login(String email, String password) {
+        auth.signInWithEmailAndPassword(email, password)
+        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
                     finish();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Dica: Login seu email e senha seu RA", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -58,8 +81,8 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
-            user.setEmail(email.getText().toString());
-            user.setRa(password.getText().toString());
+            user.setEmail(editEmail.getText().toString());
+            user.setRa(editPassword.getText().toString());
 
             switch (actionId) {
                 case EditorInfo.IME_ACTION_SEND:
@@ -69,10 +92,9 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                                 break;
                     }else {
-                        TextInputEditText nomeEmail = findViewById(R.id.activity_login_edt_email);
-                        user.setNome(nomeEmail.getText().toString());
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                        finish();
+                        String email = user.getEmail();
+                        String password = user.getRa();
+                        login(email, password);
                         break;
                     }
             }
@@ -80,5 +102,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     };
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        auth = Conexao.getFirebaseAuth();
+    }
 }

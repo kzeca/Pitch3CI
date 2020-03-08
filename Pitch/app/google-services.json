@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "344795478429-uc9jig9a3lmhbgm4ie2v22tvudbku7gb.apps.googleusercontent.com",
+          "client_id": "344795478429-lvsf3tqbku16qkm3tjantdm9s25r9eej.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.br.arley.pitch3ci",
-            "certificate_hash": "38b11395912c391b888f51312fac4a98a90332ff"
+            "certificate_hash": "2587ef2dd2e2ac8297aab51693e4145c26c934e7"
           }
         },
         {
