@@ -239,7 +239,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.95" />
+            app:layout_constraintGuide_percent="0.92" />
 
         <TextView
             android:id="@+id/textView6"
@@ -275,7 +275,7 @@
             android:gravity="center|start"
             android:text="Equipe mais investida"
             android:textColor="#fff"
-            android:textSize="11sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline36"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
             app:layout_constraintHorizontal_bias="0.0"
@@ -315,7 +315,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.09" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline42"
@@ -329,7 +329,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.95" />
+            app:layout_constraintGuide_percent="0.92" />
 
         <TextView
             android:id="@+id/textView8"
@@ -367,7 +367,7 @@
             android:gravity="center|start"
             android:text="Segunda equipe mais investida"
             android:textColor="#fff"
-            android:textSize="11sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline42"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -412,7 +412,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.09" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline48"
@@ -426,7 +426,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.95" />
+            app:layout_constraintGuide_percent="0.92" />
 
         <TextView
             android:id="@+id/textView10"
@@ -455,7 +455,7 @@
             android:gravity="center|start"
             android:text="Terceira equipe mais investida"
             android:textColor="#fff"
-            android:textSize="11sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline48"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline49"
