@@ -29,7 +29,7 @@ public class ChooseActivity extends AppCompatActivity{
         btVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseActivity.this, HomeActivity.class));
+                finish();
             }
         });
         clickIt();
