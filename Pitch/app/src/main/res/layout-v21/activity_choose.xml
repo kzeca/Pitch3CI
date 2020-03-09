@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/avaliar"
-            android:textColor="@color/azulDebora"
+            android:textColor="#3F51B5"
             android:textSize="55dp"
             android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
             android:layout_below="@+id/activivy_choose_tv_Avaliar"
             android:layout_centerInParent="true"
             android:layout_marginTop="-8dp"
-            android:background="@color/azulDebora" />
+            android:background="#3F51B5" />
 
         <ImageButton
             android:id="@+id/activity_choose_bt_voltar"
@@ -92,6 +92,8 @@
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_group_24dp"
                             android:gravity="center"
+                            android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:text="Natália, Rafaela, Thiilyn"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -102,8 +104,9 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:textColor="@color/investir_color"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
@@ -112,7 +115,7 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:drawableRight="@android:drawable/btn_star_big_on"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="5,0"
                             android:textSize="10dp"
                             android:textStyle="bold"></TextView>
@@ -145,7 +148,8 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_group_24dp"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:text="Isaac, Arnely, Kevin"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -155,16 +159,16 @@
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoIsaac"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"
@@ -198,8 +202,9 @@
                             android:layout_width="116dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
+                            android:layout_marginLeft="4dp"
                             android:drawableLeft="@drawable/ic_group_24dp"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="Sarah, Eduarda, Esther"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -208,17 +213,17 @@
                             android:id="@+id/activity_choose_tv_moneySarah"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:gravity="center"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoSarah"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"
@@ -252,6 +257,7 @@
                             android:layout_width="116dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
+                            android:layout_marginLeft="4dp" android:textColor="@color/investir_color"
                             android:drawableLeft="@drawable/ic_group_24dp"
                             android:gravity="center"
                             android:text="Airton, Carine, Bruno"
@@ -263,16 +269,16 @@
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoAirton"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"
@@ -305,7 +311,8 @@
                         <TextView
                             android:layout_width="116dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:drawableLeft="@drawable/ic_group_24dp"
                             android:gravity="center"
                             android:text="Yasmin, Louan, Laura"
@@ -316,10 +323,10 @@
                             android:id="@+id/activity_choose_tv_moneyYasmin"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:gravity="center"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
@@ -329,7 +336,7 @@
                             android:layout_weight="1"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
-                            android:text="5,0"
+                            android:text="5,0" android:textColor="@color/investir_color"
                             android:textSize="10dp"
                             android:textStyle="bold"></TextView>
 
@@ -359,7 +366,8 @@
                         <TextView
                             android:layout_width="116dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:drawableLeft="@drawable/ic_group_24dp"
                             android:gravity="center"
                             android:text="Lorenzo, Samuel, Vinícius"
@@ -370,17 +378,17 @@
                             android:id="@+id/activity_choose_tv_moneyLorenzo"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:gravity="center"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoLorenzo"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"
@@ -413,9 +421,10 @@
                         <TextView
                             android:layout_width="116dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableLeft="@drawable/ic_group_24dp"
                             android:gravity="center"
+                            android:layout_marginLeft="4dp"
                             android:text="José, Natália, Tainá"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -423,17 +432,17 @@
                         <TextView
                             android:id="@+id/activity_choose_tv_moneyJosé"
                             android:layout_width="0dp"
-                            android:layout_height="40dp"
+                            android:layout_height="40dp" android:textColor="@color/investir_color"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoJosé"
                             android:layout_width="0dp"
-                            android:layout_height="40dp"
+                            android:layout_height="40dp" android:textColor="@color/investir_color"
                             android:layout_weight="1"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
@@ -468,8 +477,9 @@
                             android:layout_width="116dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
+                            android:layout_marginLeft="4dp"
                             android:drawableLeft="@drawable/ic_group_24dp"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="Felipe, Diogo, Gabrielle"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -480,15 +490,15 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:text="R$ 10000000" android:textColor="@color/investir_color"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoFelipe"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"
@@ -507,7 +517,7 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="5dp" android:textColor="@color/investir_color"
                     android:layout_marginBottom="5dp"
                     app:cardBackgroundColor="#3F51B5"
                     app:cardCornerRadius="10dp">
@@ -523,7 +533,8 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_group_24dp"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:text="Luiz, Brenner, Brenda"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -533,9 +544,9 @@
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
@@ -545,7 +556,7 @@
                             android:layout_weight="1"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
-                            android:text="5,0"
+                            android:text="5,0" android:textColor="@color/investir_color"
                             android:textSize="10dp"
                             android:textStyle="bold"></TextView>
 
@@ -575,7 +586,8 @@
                         <TextView
                             android:layout_width="116dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:drawableLeft="@drawable/ic_group_24dp"
                             android:gravity="center"
                             android:text="João, Júlio, Gabriel"
@@ -587,16 +599,16 @@
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoJoao"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"
@@ -631,7 +643,8 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_group_24dp"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:text="Arley, Isabella, Rebeca"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -640,10 +653,10 @@
                             android:id="@+id/activity_choose_tv_moneyArley"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:gravity="center"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
@@ -653,7 +666,7 @@
                             android:layout_weight="1"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
-                            android:text="5,0"
+                            android:text="5,0" android:textColor="@color/investir_color"
                             android:textSize="10dp"
                             android:textStyle="bold"></TextView>
 
@@ -685,7 +698,8 @@
                             android:layout_height="40dp"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_group_24dp"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
+                            android:layout_marginLeft="4dp"
                             android:text="Débora, Washington, Victor"
                             android:textSize="12sp"
                             android:textStyle="bold"></TextView>
@@ -695,16 +709,16 @@
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center" android:textColor="@color/investir_color"
                             android:text="R$ 10000000"
-                            android:textSize="8sp"
+                            android:textSize="@dimen/dinheiro"
                             android:textStyle="bold"></TextView>
 
                         <TextView
                             android:id="@+id/activity_choose_tv_avaliacaoDebora"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1" android:textColor="@color/investir_color"
                             android:drawableRight="@android:drawable/btn_star_big_on"
                             android:gravity="center"
                             android:text="5,0"

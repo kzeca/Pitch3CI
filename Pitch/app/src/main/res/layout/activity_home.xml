@@ -483,7 +483,7 @@
         android:gravity="bottom"
         android:text="Olá, Arley Novais"
         android:textColor="@color/azulDebora"
-        android:textSize="13sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline50"
         app:layout_constraintEnd_toStartOf="@+id/guideline51"
         app:layout_constraintHorizontal_bias="0.0"
@@ -505,7 +505,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.77" />
+        app:layout_constraintGuide_percent="0.8" />
 
     <ImageView
         android:id="@+id/imageView4"
