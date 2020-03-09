@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
+
 public class HomeActivity extends AppCompatActivity {
 
     TextView activity_home_tv_nome;
@@ -19,7 +21,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         activity_home_tv_nome = findViewById(R.id.activity_home_tv_nome);
-        activity_home_tv_nome.setText(String.format(user.getEmail()));
+
+        String[] emailseparado = user.getEmail().split("@");
+
+        activity_home_tv_nome.setText(String.format("Olá, %s", emailseparado[0]));
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
