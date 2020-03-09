@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText editEmail;
     TextInputEditText editPassword;
     Usuario user;
+    ProgressBar progressBar;
     private FirebaseAuth auth;
 
     @Override
@@ -32,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         editEmail = findViewById(R.id.activity_login_edt_email);
+        progressBar = findViewById(R.id.activity_login_progressBar);
         editPassword = findViewById(R.id.activity_login_edt_password);
         editPassword.setOnEditorActionListener(editorListener);
         editEmail.setOnEditorActionListener(editorListener);
@@ -53,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     String email = user.getEmail();
                     String password = user.getRa();
+                    progressBar.setVisibility(View.VISIBLE);
                     login(email, password);
                 }
             }
@@ -68,8 +72,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    progressBar.setVisibility(View.GONE);
                     finish();
                 }else{
+                    progressBar.setVisibility(View.INVISIBLE);
                     Toast.makeText(LoginActivity.this, "Dica: Login seu email e senha seu RA", Toast.LENGTH_LONG).show();
                 }
             }
@@ -94,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                     }else {
                         String email = user.getEmail();
                         String password = user.getRa();
+                        progressBar.setVisibility(View.VISIBLE);
                         login(email, password);
                         break;
                     }
