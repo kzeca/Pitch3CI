@@ -1,9 +1,13 @@
 package com.br.arley.pitch3ci;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class Usuario {
     private static String ra;
     private int dinheiro = 100000;
     public static String email;
+    DatabaseReference reference;
+
 
     public Usuario(){
 

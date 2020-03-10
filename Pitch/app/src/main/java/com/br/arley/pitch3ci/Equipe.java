@@ -14,9 +14,6 @@ public class Equipe {
 
     }
 
-    /*public Equipe(){
-
-    }*/
 
 
     public String getNome() {

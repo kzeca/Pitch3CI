@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         editEmail.setOnEditorActionListener(editorListener);
 
 
-
         Button btLogar = (Button) findViewById(R.id.bt_entrar);
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    System.out.println("Adoleta: "+auth.getCurrentUser().getUid());
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     progressBar.setVisibility(View.GONE);
