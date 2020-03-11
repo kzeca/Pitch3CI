@@ -117,14 +117,14 @@ public class ChooseActivity extends AppCompatActivity{
     private void putId() {
         Natalia = findViewById(R.id.activity_choose_tv_Natalia);
         Arley = findViewById(R.id.activity_choose_tv_Arley);
-        Jose = findViewById(R.id.activity_choose_tv_José);
+        Jose = findViewById(R.id.activity_choose_tv_Jose);
         Joao = findViewById(R.id.activity_choose_tv_Joao);
         Sarah = findViewById(R.id.activity_choose_tv_Sarah);
         Lorenzo = findViewById(R.id.activity_choose_tv_Lorenzo);
         Luiz = findViewById(R.id.activity_choose_tv_Luiz);
         Debora = findViewById(R.id.activity_choose_tv_Debora);
         Felipe = findViewById(R.id.activity_choose_tv_Felipe);
-        Yasmin = findViewById(R.id.activity_choose_tv_Yasmin);
+        Yasmin = findViewById(R.id.activity_choose_tv_Yasmim);
         Airton = findViewById(R.id.activity_choose_tv_Airton);
         Isaac = findViewById(R.id.activity_choose_tv_Isaac);
     }

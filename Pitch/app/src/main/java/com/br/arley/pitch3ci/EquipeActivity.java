@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil;
+
 public class EquipeActivity extends AppCompatActivity {
 
     EditText edtValorInvestir;
@@ -37,7 +39,7 @@ public class EquipeActivity extends AppCompatActivity {
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                 }else {
                     finish();
-                    Toast.makeText(EquipeActivity.this, "Obrigado por votar", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EquipeActivity.this, "Obrigado por avaliar", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -121,6 +123,7 @@ public class EquipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 edtValorInvestir.requestFocus();
+                UIUtil.showKeyboard(EquipeActivity.this, edtValorInvestir);
             }
         });
     }
