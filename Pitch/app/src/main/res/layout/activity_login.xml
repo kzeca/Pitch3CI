@@ -119,29 +119,28 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        >
+        app:layout_constraintTop_toTopOf="@+id/guideline9">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/activity_login_edt_email"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textSize="16sp"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp" />
+            android:paddingRight="5dp"
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -150,16 +149,15 @@
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Password"
             android:id="@+id/activity_login_edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:imeOptions="actionSend"
+            android:inputType="textPassword"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:textSize="16sp"
-            android:inputType="textPassword"
-            android:imeOptions="actionSend"
-            />
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
