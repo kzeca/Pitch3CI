@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class EquipeActivity extends AppCompatActivity {
     String uid;
     Equipe equipe;
     DatabaseReference dataBase;
+    RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -48,6 +50,7 @@ public class EquipeActivity extends AppCompatActivity {
         Button btInvestir = findViewById(R.id.equipe_activity_bt_investir);
         ImageButton btnVoltar = findViewById(R.id.equipe_activity_bt_voltar);
         edtValorInvestir = findViewById(R.id.equipe_activity_edt_valor_investir);
+        ratingBar = findViewById(R.id.equipe_activity_rating_bar);
 
         user = LoginActivity.user;
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -59,12 +62,22 @@ public class EquipeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String saldo = dataSnapshot.child("usuarios").child(uid).child("saldo").getValue(String.class);
                 String integrantes = dataSnapshot.child("equipes").child(equipe.getId()).child("integrantes").getValue(String.class);
+                String n_avaliacao = dataSnapshot.child("equipes").child(equipe.getId()).child("n_avaliacao").getValue(String.class);
+                String soma_avaliacao = dataSnapshot.child("equipes").child(equipe.getId()).child("soma_avaliacao").getValue(String.class);
+                String media_avaliacao = dataSnapshot.child("equipes").child(equipe.getId()).child("media_avaliacao").getValue(String.class);
+                String arrecadacao = dataSnapshot.child("equipes").child(equipe.getId()).child("arrecadacao").getValue(String.class);
                 if(saldo != null){
                     user.setDinheiro(Integer.parseInt(saldo));
                     tvSaldo.setText("R$ " + user.getDinheiro());
                 }
                 if(integrantes!=null){
                     tvIntegrantes.setText(integrantes);
+                }
+                if (n_avaliacao!=null&&soma_avaliacao!=null&&media_avaliacao!=null){
+                    equipe.setMediaAvaliacao(Double.parseDouble(media_avaliacao));
+                    equipe.setNumeroAvaliadores(Integer.parseInt(n_avaliacao));
+                    equipe.setSomaAvaliacao(Integer.parseInt(soma_avaliacao));
+                    equipe.setArrecadacao(Integer.parseInt(arrecadacao));
                 }
 
             }
@@ -80,11 +93,23 @@ public class EquipeActivity extends AppCompatActivity {
         btInvestir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Integer.parseInt(edtValorInvestir.getText().toString())>100000){
+                if(Integer.parseInt(edtValorInvestir.getText().toString())>user.getDinheiro()){
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                 }else {
-                    finish();
-                    Toast.makeText(EquipeActivity.this, "Obrigado por avaliar", Toast.LENGTH_SHORT).show();
+                    if(ratingBar.getRating()!=0) {
+                        int avaliacao = (int) ratingBar.getRating();
+                        int saldo = user.getDinheiro();
+                        int valor_a_pagar = Integer.parseInt(edtValorInvestir.getText().toString());
+                        saldo -= valor_a_pagar;
+                        dataBase.child("usuarios").child(uid).child("saldo").setValue(Integer.toString(saldo));
+                        dataBase.child("equipes").child(equipe.getId()).child("arrecadacao").setValue(Integer.toString(valor_a_pagar+equipe.getArrecadacao()));
+                        dataBase.child("equipes").child(equipe.getId()).child("soma_avaliacao").setValue(Integer.toString(avaliacao+equipe.getSomaAvaliacao()));
+                        dataBase.child("equipes").child(equipe.getId()).child("n_avaliacao").setValue(Integer.toString(equipe.getNumeroAvaliadores()));
+                        double media = (equipe.getSomaAvaliacao()+avaliacao)/(equipe.getNumeroAvaliadores());
+                        dataBase.child("equipes").child(equipe.getId()).child("media_avaliacao").setValue(Double.toString(media));
+                        finish();
+                        Toast.makeText(EquipeActivity.this, "Obrigado por avaliar", Toast.LENGTH_SHORT).show();
+                    }else Toast.makeText(EquipeActivity.this, "Por favor, avalie a equipe!",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -105,7 +130,7 @@ public class EquipeActivity extends AppCompatActivity {
                 if(txtValor.equals("")) txtValor = "0";
                 valor = Integer.parseInt(txtValor);
                 valor += valorSomar;
-                if(valor>100000){
+                if(valor>user.getDinheiro()){
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                     valor -= valorSomar;
                 }
@@ -122,7 +147,7 @@ public class EquipeActivity extends AppCompatActivity {
                 if(txtValor.equals("")) txtValor = "0";
                 valor = Integer.parseInt(txtValor);
                 valor += valorSomar;
-                if(valor>100000){
+                if(valor>user.getDinheiro()){
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                     valor -= valorSomar;
                 }
@@ -139,7 +164,7 @@ public class EquipeActivity extends AppCompatActivity {
                 if(txtValor.equals("")) txtValor = "0";
                 valor = Integer.parseInt(txtValor);
                 valor += valorSomar;
-                if(valor>100000){
+                if(valor>user.getDinheiro()){
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                     valor -= valorSomar;
                 }
@@ -156,7 +181,7 @@ public class EquipeActivity extends AppCompatActivity {
                 if(txtValor.equals("")) txtValor = "0";
                 valor = Integer.parseInt(txtValor);
                 valor += valorSomar;
-                if(valor>100000){
+                if(valor>user.getDinheiro()){
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                     valor -= valorSomar;
                 }

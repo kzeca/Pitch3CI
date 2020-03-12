@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Equipe {
     private String id;
-    private ArrayList<String> integrantes;
     private int arrecadacao;
     private int somaAvaliacao;
     private int numeroAvaliadores;
@@ -17,15 +16,6 @@ public class Equipe {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-
-    public ArrayList<String> getIntegrantes() {
-        return integrantes;
-    }
-
-    public void setIntegrantes(ArrayList<String> integrantes) {
-        this.integrantes = integrantes;
     }
 
     public int getArrecadacao() {
@@ -49,7 +39,7 @@ public class Equipe {
     }
 
     public void setNumeroAvaliadores(int numeroAvaliadores) {
-        this.numeroAvaliadores = numeroAvaliadores;
+        this.numeroAvaliadores = numeroAvaliadores+1;
     }
 
     public double getMediaAvaliacao() {
