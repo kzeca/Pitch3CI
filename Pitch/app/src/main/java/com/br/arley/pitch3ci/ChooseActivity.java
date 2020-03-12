@@ -59,23 +59,43 @@ public class ChooseActivity extends AppCompatActivity{
         dataBase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mediaStarJose.setText(dataSnapshot.child("equipes").child("0").child("media_avaliacao").getValue(String.class));
+                mediaStarArley.setText(dataSnapshot.child("equipes").child("1").child("media_avaliacao").getValue(String.class));
+                mediaStarFelipe.setText(dataSnapshot.child("equipes").child("2").child("media_avaliacao").getValue(String.class));
+                mediaStarDebora.setText(dataSnapshot.child("equipes").child("3").child("media_avaliacao").getValue(String.class));
+                mediaStarYasmin.setText(dataSnapshot.child("equipes").child("4").child("media_avaliacao").getValue(String.class));
+                mediaStarLuiz.setText(dataSnapshot.child("equipes").child("5").child("media_avaliacao").getValue(String.class));
+                mediaStarIsaac.setText(dataSnapshot.child("equipes").child("6").child("media_avaliacao").getValue(String.class));
+                mediaStarJoao.setText(dataSnapshot.child("equipes").child("7").child("media_avaliacao").getValue(String.class));
+                mediaStarAirton.setText(dataSnapshot.child("equipes").child("8").child("media_avaliacao").getValue(String.class));
+                mediaStarLorenzo.setText(dataSnapshot.child("equipes").child("9").child("media_avaliacao").getValue(String.class));
+                mediaStarSarah.setText(dataSnapshot.child("equipes").child("10").child("media_avaliacao").getValue(String.class));
+                mediaStarNatalia.setText(dataSnapshot.child("equipes").child("11").child("media_avaliacao").getValue(String.class));
 
+                investimentoJose.setText("R$ "+dataSnapshot.child("equipes").child("0").child("arrecadacao").getValue(String.class));
+                investimentoArley.setText("R$ "+dataSnapshot.child("equipes").child("1").child("arrecadacao").getValue(String.class));
+                investimentoFelipe.setText("R$ "+dataSnapshot.child("equipes").child("2").child("arrecadacao").getValue(String.class));
+                investimentoDebora.setText("R$ "+dataSnapshot.child("equipes").child("3").child("arrecadacao").getValue(String.class));
+                investimentoYasmin.setText("R$ "+dataSnapshot.child("equipes").child("4").child("arrecadacao").getValue(String.class));
+                investimentoLuiz.setText("R$ "+dataSnapshot.child("equipes").child("5").child("arrecadacao").getValue(String.class));
+                investimentoIsaac.setText("R$ "+dataSnapshot.child("equipes").child("6").child("arrecadacao").getValue(String.class));
+                investimentoJoao.setText("R$ "+dataSnapshot.child("equipes").child("7").child("arrecadacao").getValue(String.class));
+                investimentoAirton.setText("R$ "+dataSnapshot.child("equipes").child("8").child("arrecadacao").getValue(String.class));
+                investimentoLorenzo.setText("R$ "+dataSnapshot.child("equipes").child("9").child("arrecadacao").getValue(String.class));
+                investimentoSarah.setText("R$ "+dataSnapshot.child("equipes").child("10").child("arrecadacao").getValue(String.class));
+                investimentoNatalia.setText("R$ "+dataSnapshot.child("equipes").child("11").child("arrecadacao").getValue(String.class));
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
-
     }
-
     private void clickIt() {
-        cvNatalia.setOnClickListener(new View.OnClickListener() {
+
+        cvJose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               actionClick("11");
+                actionClick("0");
             }
         });
         cvArley.setOnClickListener(new View.OnClickListener() {
@@ -84,40 +104,10 @@ public class ChooseActivity extends AppCompatActivity{
                 actionClick("1");
             }
         });
-        cvJose.setOnClickListener(new View.OnClickListener() {
+        cvFelipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("0");
-            }
-        });
-        cvJoao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actionClick("7");
-            }
-        });
-        cvSarah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actionClick("10");
-            }
-        });
-        cvYasmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actionClick("4");
-            }
-        });
-        cvLorenzo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actionClick("9");
-            }
-        });
-        cvLuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actionClick("5");
+                actionClick("2");
             }
         });
         cvDebora.setOnClickListener(new View.OnClickListener() {
@@ -126,10 +116,28 @@ public class ChooseActivity extends AppCompatActivity{
                 actionClick("3");
             }
         });
-        cvFelipe.setOnClickListener(new View.OnClickListener() {
+        cvYasmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("2");
+                actionClick("4");
+            }
+        });
+        cvLuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionClick("5");
+            }
+        });
+        cvIsaac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionClick("6");
+            }
+        });
+        cvJoao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionClick("7");
             }
         });
         cvAirton.setOnClickListener(new View.OnClickListener() {
@@ -138,10 +146,22 @@ public class ChooseActivity extends AppCompatActivity{
                 actionClick("8");
             }
         });
-        cvIsaac.setOnClickListener(new View.OnClickListener() {
+        cvLorenzo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("6");
+                actionClick("9");
+            }
+        });
+        cvSarah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionClick("10");
+            }
+        });
+        cvNatalia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionClick("11");
             }
         });
     }
