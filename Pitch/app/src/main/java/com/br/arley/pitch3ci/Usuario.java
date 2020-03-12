@@ -4,7 +4,7 @@ import com.google.firebase.database.DatabaseReference;
 
 public class Usuario {
     private String ra;
-    private int dinheiro = 100000;
+    private int dinheiro;
     public static String email;
     DatabaseReference reference;
     private String nome;

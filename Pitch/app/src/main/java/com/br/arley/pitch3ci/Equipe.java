@@ -3,7 +3,7 @@ package com.br.arley.pitch3ci;
 import java.util.ArrayList;
 
 public class Equipe {
-    private String nome;
+    private String id;
     private ArrayList<String> integrantes;
     private int arrecadacao;
     private int somaAvaliacao;
@@ -16,12 +16,12 @@ public class Equipe {
 
 
 
-    public String getNome() {
-        return nome;
+    public String getId() {
+        return id;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setId(String nome) {
+        this.id = nome;
     }
 
     public ArrayList<String> getIntegrantes() {

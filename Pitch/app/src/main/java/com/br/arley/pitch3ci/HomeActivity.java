@@ -51,17 +51,12 @@ public class HomeActivity extends AppCompatActivity {
                 if (nome != null) {
                     user.setNome(nome);
                     tvNome.setText("Bem Vindo, "+user.getNome());
-                }else{
-                    System.out.println("NAO DEU NOME");
                 }
                 String saldo = dataSnapshot.child("usuarios").child(uid).child("saldo").getValue(String.class);
                 if(saldo != null){
                     user.setDinheiro(Integer.parseInt(saldo));
                     tvSaldo.setText("R$ " + user.getDinheiro());
-                }else {
-                    System.out.println("NAO DEU SALDO");
                 }
-
             }
 
 
@@ -72,7 +67,6 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        //tvNome.setText(String.format("Olá, %s", user.getNome()));
 
 
         Button button = findViewById(R.id.button);

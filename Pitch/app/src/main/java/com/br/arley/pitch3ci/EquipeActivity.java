@@ -6,22 +6,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil;
 
 public class EquipeActivity extends AppCompatActivity {
 
     EditText edtValorInvestir;
+    TextView tvSaldo, tvIntegrantes;
+    Usuario user;
+    FirebaseUser firebaseUser;
+    String uid;
+    Equipe equipe;
+    DatabaseReference dataBase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipe);
-
+        tvSaldo = findViewById(R.id.equipe_activity_tv_saldo);
+        tvIntegrantes = findViewById(R.id.equipe_activity_tv_integrantes);
         Button btAdicionar1k = findViewById(R.id.equipe_activity_bt_1000);
         Button btAdicionar10k = findViewById(R.id.equipe_activity_bt_10000);
         Button btAdicionar20k = findViewById(R.id.equipe_activity_bt_20000);
@@ -30,6 +47,33 @@ public class EquipeActivity extends AppCompatActivity {
         Button btInvestir = findViewById(R.id.equipe_activity_bt_investir);
         ImageButton btnVoltar = findViewById(R.id.equipe_activity_bt_voltar);
         edtValorInvestir = findViewById(R.id.equipe_activity_edt_valor_investir);
+
+        user = LoginActivity.user;
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        uid = firebaseUser.getUid();
+        dataBase = FirebaseDatabase.getInstance().getReference();
+
+        dataBase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String saldo = dataSnapshot.child("usuarios").child(uid).child("saldo").getValue(String.class);
+                String integrantes = dataSnapshot.child("equipes").child(equipe.getId()).child("integrantes").getValue(String.class);
+                if(saldo != null){
+                    user.setDinheiro(Integer.parseInt(saldo));
+                    tvSaldo.setText("R$ " + user.getDinheiro());
+                }
+                if(integrantes!=null){
+                    tvIntegrantes.setText(integrantes);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
 
         btInvestir.setOnClickListener(new View.OnClickListener() {

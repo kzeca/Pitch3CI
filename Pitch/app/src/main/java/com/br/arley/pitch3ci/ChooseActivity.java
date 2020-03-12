@@ -19,6 +19,7 @@ public class ChooseActivity extends AppCompatActivity{
     CardView cvYasmin;CardView cvLuiz;CardView cvIsaac;
     CardView cvNatalia;CardView cvJoao;CardView cvAirton;
     CardView cvLorenzo;CardView cvJose;CardView cvSarah;
+    Equipe equipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class ChooseActivity extends AppCompatActivity{
         cvNatalia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               actionClick();
+                actionClick();
             }
         });
         cvArley.setOnClickListener(new View.OnClickListener() {

@@ -73,9 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    System.out.println("Adoleta: "+auth.getCurrentUser().getUid());
                     firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                    System.out.println(firebaseUser.getUid());
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     progressBar.setVisibility(View.GONE);
