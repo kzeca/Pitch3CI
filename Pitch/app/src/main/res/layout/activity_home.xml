@@ -480,7 +480,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:gravity="bottom"
-        android:text="Olá, "
+        android:text="Bem Vindo, "
         android:textColor="@color/azulDebora"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline50"

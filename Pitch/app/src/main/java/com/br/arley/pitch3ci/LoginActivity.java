@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         auth  = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        System.out.println(firebaseUser.getUid());
         user = new Usuario();
         editEmail = findViewById(R.id.activity_login_edt_email);
         progressBar = findViewById(R.id.activity_login_progressBar);
