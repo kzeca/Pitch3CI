@@ -10,13 +10,15 @@ public class Equipe {
     private int numeroAvaliadores;
     private double mediaAvaliacao;
 
-    public Equipe(){
-
+    public String getId() {
+        return id;
     }
 
-    /*public Equipe(){
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    }*/
+    private String id;
 
 
     public String getNome() {

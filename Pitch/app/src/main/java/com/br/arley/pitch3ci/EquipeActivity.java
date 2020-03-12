@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
+import static com.br.arley.pitch3ci.ChooseActivity.equipe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil;
@@ -15,13 +15,15 @@ import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil;
 public class EquipeActivity extends AppCompatActivity {
 
     EditText edtValorInvestir;
+    Equipe equipe;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipe);
-
+        equipe = ChooseActivity.equipe;
+        System.out.println("EDUARDO : "+equipe.getId());
         Button btAdicionar1k = findViewById(R.id.equipe_activity_bt_1000);
         Button btAdicionar10k = findViewById(R.id.equipe_activity_bt_10000);
         Button btAdicionar20k = findViewById(R.id.equipe_activity_bt_20000);
