@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import static com.br.arley.pitch3ci.ChooseActivity.equipe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,13 +33,13 @@ public class EquipeActivity extends AppCompatActivity {
     Equipe equipe;
     DatabaseReference dataBase;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipe);
         tvSaldo = findViewById(R.id.equipe_activity_tv_saldo);
         tvIntegrantes = findViewById(R.id.equipe_activity_tv_integrantes);
+        equipe = ChooseActivity.equipe;
         Button btAdicionar1k = findViewById(R.id.equipe_activity_bt_1000);
         Button btAdicionar10k = findViewById(R.id.equipe_activity_bt_10000);
         Button btAdicionar20k = findViewById(R.id.equipe_activity_bt_20000);
