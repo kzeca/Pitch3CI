@@ -93,6 +93,8 @@ public class EquipeActivity extends AppCompatActivity {
         btInvestir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String txtValor = (edtValorInvestir.getText().toString());
+                if(txtValor.equals("")) edtValorInvestir.setText("0");
                 if(Integer.parseInt(edtValorInvestir.getText().toString())>user.getDinheiro()){
                     Toast.makeText(EquipeActivity.this, "Os valores ultrapassam sua quantia máxima",Toast.LENGTH_SHORT).show();
                 }else {
@@ -101,8 +103,10 @@ public class EquipeActivity extends AppCompatActivity {
                         int saldo = user.getDinheiro();
                         int valor_a_pagar = Integer.parseInt(edtValorInvestir.getText().toString());
                         saldo -= valor_a_pagar;
-                        dataBase.child("usuarios").child(uid).child("saldo").setValue(Integer.toString(saldo));
-                        dataBase.child("equipes").child(equipe.getId()).child("arrecadacao").setValue(Integer.toString(valor_a_pagar+equipe.getArrecadacao()));
+                        if(saldo!=0){
+                            dataBase.child("usuarios").child(uid).child("saldo").setValue(Integer.toString(saldo));
+                            dataBase.child("equipes").child(equipe.getId()).child("arrecadacao").setValue(Integer.toString(valor_a_pagar+equipe.getArrecadacao()));
+                        }
                         dataBase.child("equipes").child(equipe.getId()).child("soma_avaliacao").setValue(Integer.toString(avaliacao+equipe.getSomaAvaliacao()));
                         dataBase.child("equipes").child(equipe.getId()).child("n_avaliacao").setValue(Integer.toString(equipe.getNumeroAvaliadores()));
                         double media = (equipe.getSomaAvaliacao()+avaliacao)/(equipe.getNumeroAvaliadores());
