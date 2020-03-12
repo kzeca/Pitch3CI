@@ -18,21 +18,26 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText editEmail;
     TextInputEditText editPassword;
-    Usuario user;
+    static Usuario user;
+
     ProgressBar progressBar;
     private FirebaseAuth auth;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        user = new Usuario();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        auth  = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        System.out.println(firebaseUser.getUid());
+        user = new Usuario();
         editEmail = findViewById(R.id.activity_login_edt_email);
         progressBar = findViewById(R.id.activity_login_progressBar);
         editPassword = findViewById(R.id.activity_login_edt_password);
@@ -70,9 +75,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                    System.out.println(firebaseUser.getUid());
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     progressBar.setVisibility(View.GONE);
+
                     finish();
                 }else{
                     progressBar.setVisibility(View.INVISIBLE);
@@ -109,9 +117,4 @@ public class LoginActivity extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        auth = Conexao.getFirebaseAuth();
-    }
 }

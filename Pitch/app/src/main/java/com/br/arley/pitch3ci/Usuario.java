@@ -1,9 +1,25 @@
 package com.br.arley.pitch3ci;
 
 public class Usuario {
-    private static String ra;
+    private String ra;
     private int dinheiro = 100000;
-    public static String email;
+    public String email;
+    private String nome;
+
+
+    public void setDinheiro(int dinheiro) {
+        this.dinheiro = dinheiro;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
 
     public Usuario(){
 
