@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Pitch3CI</string>
     <string name="avaliar">Avaliar</string>
-    <dimen name="dinheiro">10sp</dimen>
+    <dimen name="dinheiro">13sp</dimen>
 </resources>

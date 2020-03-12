@@ -15,10 +15,10 @@ import androidx.cardview.widget.CardView;
 
 public class ChooseActivity extends AppCompatActivity{
 
-    CardView Arley;CardView Felipe;CardView Debora;
-    CardView Yasmin;CardView Luiz;CardView Isaac;
-    CardView Natalia;CardView Joao;CardView Airton;
-    CardView Lorenzo;CardView Jose;CardView Sarah;
+    CardView cvArley;CardView cvFelipe;CardView cvDebora;
+    CardView cvYasmin;CardView cvLuiz;CardView cvIsaac;
+    CardView cvNatalia;CardView cvJoao;CardView cvAirton;
+    CardView cvLorenzo;CardView cvJose;CardView cvSarah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,73 +36,73 @@ public class ChooseActivity extends AppCompatActivity{
     }
 
     private void clickIt() {
-        Natalia.setOnClickListener(new View.OnClickListener() {
+        cvNatalia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                actionClick();
             }
         });
-        Arley.setOnClickListener(new View.OnClickListener() {
+        cvArley.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Jose.setOnClickListener(new View.OnClickListener() {
+        cvJose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Joao.setOnClickListener(new View.OnClickListener() {
+        cvJoao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Sarah.setOnClickListener(new View.OnClickListener() {
+        cvSarah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Yasmin.setOnClickListener(new View.OnClickListener() {
+        cvYasmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Lorenzo.setOnClickListener(new View.OnClickListener() {
+        cvLorenzo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Luiz.setOnClickListener(new View.OnClickListener() {
+        cvLuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Debora.setOnClickListener(new View.OnClickListener() {
+        cvDebora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Felipe.setOnClickListener(new View.OnClickListener() {
+        cvFelipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Airton.setOnClickListener(new View.OnClickListener() {
+        cvAirton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
             }
         });
-        Isaac.setOnClickListener(new View.OnClickListener() {
+        cvIsaac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 actionClick();
@@ -115,18 +115,18 @@ public class ChooseActivity extends AppCompatActivity{
     }
 
     private void putId() {
-        Natalia = findViewById(R.id.activity_choose_tv_Natalia);
-        Arley = findViewById(R.id.activity_choose_tv_Arley);
-        Jose = findViewById(R.id.activity_choose_tv_José);
-        Joao = findViewById(R.id.activity_choose_tv_Joao);
-        Sarah = findViewById(R.id.activity_choose_tv_Sarah);
-        Lorenzo = findViewById(R.id.activity_choose_tv_Lorenzo);
-        Luiz = findViewById(R.id.activity_choose_tv_Luiz);
-        Debora = findViewById(R.id.activity_choose_tv_Debora);
-        Felipe = findViewById(R.id.activity_choose_tv_Felipe);
-        Yasmin = findViewById(R.id.activity_choose_tv_Yasmin);
-        Airton = findViewById(R.id.activity_choose_tv_Airton);
-        Isaac = findViewById(R.id.activity_choose_tv_Isaac);
+        cvNatalia = findViewById(R.id.activity_choose_cv_Natalia);
+        cvArley = findViewById(R.id.activity_choose_cv_Arley);
+        cvJose = findViewById(R.id.activity_choose_cv_Jose);
+        cvJoao = findViewById(R.id.activity_choose_cv_Joao);
+        cvSarah = findViewById(R.id.activity_choose_cv_Sarah);
+        cvLorenzo = findViewById(R.id.activity_choose_cv_Lorenzo);
+        cvLuiz = findViewById(R.id.activity_choose_cv_Luiz);
+        cvDebora = findViewById(R.id.activity_choose_cv_Debora);
+        cvFelipe = findViewById(R.id.activity_choose_cv_Felipe);
+        cvYasmin = findViewById(R.id.activity_choose_cv_Yasmim);
+        cvAirton = findViewById(R.id.activity_choose_cv_Airton);
+        cvIsaac = findViewById(R.id.activity_choose_cv_Isaac);
     }
 
 }

@@ -11,7 +11,7 @@
         android:id="@+id/equipe_activity_rating_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:numStars="5"
         android:progressTint="@color/azulDebora"
         android:stepSize="1"

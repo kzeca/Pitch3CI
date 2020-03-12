@@ -3,21 +3,32 @@ package com.br.arley.pitch3ci;
 import com.google.firebase.database.DatabaseReference;
 
 public class Usuario {
-    private static String ra;
+    private String ra;
     private int dinheiro = 100000;
     public static String email;
     DatabaseReference reference;
+    private String nome;
 
+
+    public void setDinheiro(int dinheiro) {
+        this.dinheiro = dinheiro;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public Usuario(){
 
     }
-
     public Usuario(String ra, String email){
         this.setRa(ra);
         this.setEmail(email);
     }
-
 
     public int getDinheiro() {
         return dinheiro;
