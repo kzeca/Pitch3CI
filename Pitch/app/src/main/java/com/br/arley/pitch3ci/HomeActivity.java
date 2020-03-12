@@ -55,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
                 String saldo = dataSnapshot.child("usuarios").child(uid).child("saldo").getValue(String.class);
                 if(saldo != null){
                     user.setDinheiro(Integer.parseInt(saldo));
+                    tvSaldo.setTextSize(2, 43.0f);
                     tvSaldo.setText("R$ " + user.getDinheiro());
                 }
             }
