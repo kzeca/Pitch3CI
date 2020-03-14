@@ -11,9 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import static com.br.arley.pitch3ci.ChooseActivity.equipe;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.br.arley.pitch3ci.Modelo.Equipe;
+import com.br.arley.pitch3ci.Modelo.Usuario;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil;
+
+import java.math.BigDecimal;
 
 public class EquipeActivity extends AppCompatActivity {
 
@@ -103,14 +107,17 @@ public class EquipeActivity extends AppCompatActivity {
                         int saldo = user.getDinheiro();
                         int valor_a_pagar = Integer.parseInt(edtValorInvestir.getText().toString());
                         saldo -= valor_a_pagar;
-                        if(saldo!=0){
+                        if(saldo>=0){
                             dataBase.child("usuarios").child(uid).child("saldo").setValue(Integer.toString(saldo));
                             dataBase.child("equipes").child(equipe.getId()).child("arrecadacao").setValue(Integer.toString(valor_a_pagar+equipe.getArrecadacao()));
                         }
                         dataBase.child("equipes").child(equipe.getId()).child("soma_avaliacao").setValue(Integer.toString(avaliacao+equipe.getSomaAvaliacao()));
                         dataBase.child("equipes").child(equipe.getId()).child("n_avaliacao").setValue(Integer.toString(equipe.getNumeroAvaliadores()));
-                        double media = (equipe.getSomaAvaliacao()+avaliacao)/(equipe.getNumeroAvaliadores());
-                        dataBase.child("equipes").child(equipe.getId()).child("media_avaliacao").setValue(Double.toString(media));
+                        float media = (float)(equipe.getSomaAvaliacao()+avaliacao)/(equipe.getNumeroAvaliadores());
+                        BigDecimal aNumber = new BigDecimal(media);
+                        aNumber = aNumber.setScale(1, BigDecimal.ROUND_HALF_UP);
+                        media = aNumber.floatValue();
+                        dataBase.child("equipes").child(equipe.getId()).child("media_avaliacao").setValue(Float.toString(media));
                         finish();
                         Toast.makeText(EquipeActivity.this, "Obrigado por avaliar", Toast.LENGTH_SHORT).show();
                     }else Toast.makeText(EquipeActivity.this, "Por favor, avalie a equipe!",Toast.LENGTH_SHORT).show();

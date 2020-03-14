@@ -1,4 +1,4 @@
-package com.br.arley.pitch3ci;
+package com.br.arley.pitch3ci.Modelo;
 
 import java.util.ArrayList;
 

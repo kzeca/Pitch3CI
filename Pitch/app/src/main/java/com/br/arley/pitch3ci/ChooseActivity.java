@@ -1,19 +1,21 @@
 package com.br.arley.pitch3ci;
 
-import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.br.arley.pitch3ci.Modelo.Equipe;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,9 @@ public class ChooseActivity extends AppCompatActivity{
 
     DatabaseReference dataBase;
     static Equipe equipe;
+    FirebaseUser firebaseUser;
+    String uid;
+
 
     CardView cvArley;CardView cvFelipe;CardView cvDebora;
     CardView cvYasmin;CardView cvLuiz;CardView cvIsaac;
@@ -46,6 +51,8 @@ public class ChooseActivity extends AppCompatActivity{
         setContentView(R.layout.activity_choose);
         equipe = new Equipe();
         dataBase = FirebaseDatabase.getInstance().getReference();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        uid = firebaseUser.getUid();
         putId();
         ImageButton btVoltar = findViewById(R.id.activity_choose_bt_voltar);
         btVoltar.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +66,7 @@ public class ChooseActivity extends AppCompatActivity{
         dataBase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 mediaStarJose.setText(dataSnapshot.child("equipes").child("0").child("media_avaliacao").getValue(String.class));
                 mediaStarArley.setText(dataSnapshot.child("equipes").child("1").child("media_avaliacao").getValue(String.class));
                 mediaStarFelipe.setText(dataSnapshot.child("equipes").child("2").child("media_avaliacao").getValue(String.class));
@@ -89,7 +97,10 @@ public class ChooseActivity extends AppCompatActivity{
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+
     }
+
+
     private void clickIt() {
 
         cvJose.setOnClickListener(new View.OnClickListener() {
