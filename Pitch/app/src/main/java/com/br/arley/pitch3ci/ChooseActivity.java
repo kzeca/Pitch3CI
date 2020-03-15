@@ -1,6 +1,9 @@
 package com.br.arley.pitch3ci;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -20,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.collection.LLRBNode;
 
 public class ChooseActivity extends AppCompatActivity {
 
@@ -117,93 +121,194 @@ public class ChooseActivity extends AppCompatActivity {
                 investimentoLorenzo.setText("R$ " + dataSnapshot.child("equipes").child("9").child("arrecadacao").getValue(String.class));
                 investimentoSarah.setText("R$ " + dataSnapshot.child("equipes").child("10").child("arrecadacao").getValue(String.class));
                 investimentoNatalia.setText("R$ " + dataSnapshot.child("equipes").child("11").child("arrecadacao").getValue(String.class));
-
                 String time = dataSnapshot.child("usuarios").child(uid).child("time").getValue(String.class);
                 if(time!=null){
                     user.setTime(time);
                 }
-            }
+                for(int cont=0;cont<12;cont++){
+                    String equipe = dataSnapshot.child("usuarios").child(uid).child("historico").child("avaliacoes").child(Integer.toString(cont)).getValue(String.class);
+                    switch (cont){
+                        case 0:
+                            if(!equipe.equals("0")){
+                                cvJose.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 1:
+                            if(!equipe.equals("0")){
+                                cvArley.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 2:
+                            if(!equipe.equals("0")){
+                                cvFelipe.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 3:
+                            if(!equipe.equals("0")){
+                                cvDebora.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 4:
+                            if(!equipe.equals("0")){
+                                cvYasmin.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 5:
+                            if(!equipe.equals("0")){
+                                cvLuiz.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 6:
+                            if(!equipe.equals("0")){
+                                cvIsaac.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 7:
+                            if(!equipe.equals("0")){
+                                cvJoao.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 8:
+                            if(!equipe.equals("0")){
+                                cvAirton.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 9:
+                            if(!equipe.equals("0")){
+                                cvLorenzo.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 10:
+                            if(!equipe.equals("0")){
+                                cvSarah.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                        case 11:
+                            if(!equipe.equals("0")){
+                                cvNatalia.setCardBackgroundColor(Color.GRAY);
+                            }
+                            break;
+                    }
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+}
 
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
     }
+});
+
+        }
 
 
-    private void clickIt() {
+private void clickIt() {
 
         cvJose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("0");
+                int backgroundColor = cvJose.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("0");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvArley.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("1");
+                int backgroundColor = cvArley.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("1");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvFelipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("2");
+                int backgroundColor = cvFelipe.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("2");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvDebora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("3");
+                int backgroundColor = cvDebora.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("3");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvYasmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("4");
+                int backgroundColor = cvYasmin.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("4");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvLuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("5");
+                int backgroundColor = cvLuiz.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("5");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvIsaac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("6");
+                int backgroundColor = cvIsaac.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("6");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvJoao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("7");
+                int backgroundColor = cvJoao.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("7");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvAirton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("8");
+                int backgroundColor = cvAirton.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("8");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvLorenzo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("9");
+                int backgroundColor = cvLorenzo.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)){
+                    actionClick("9");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvSarah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("10");
+                int backgroundColor = cvSarah.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!=(Color.GRAY)) {
+                    actionClick("10");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvNatalia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actionClick("11");
+                int backgroundColor = cvNatalia.getCardBackgroundColor().getDefaultColor();
+                if(backgroundColor!= (Color.GRAY)){
+                    actionClick("11");
+                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
     }
