@@ -32,6 +32,7 @@ public class ChooseActivity extends AppCompatActivity {
     Usuario user;
     FirebaseUser firebaseUser;
     String uid;
+    String user_card;
 
 
     CardView cvArley;
@@ -127,6 +128,7 @@ public class ChooseActivity extends AppCompatActivity {
                 }
                 for(int cont=0;cont<12;cont++){
                     String equipe = dataSnapshot.child("usuarios").child(uid).child("historico").child("avaliacoes").child(Integer.toString(cont)).getValue(String.class);
+                    if(equipe.equals("-1"))user_card = Integer.toString(cont);
                     switch (cont){
                         case 0:
                             if(!equipe.equals("0")){
@@ -209,7 +211,7 @@ private void clickIt() {
                 int backgroundColor = cvJose.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("0");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("0"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvArley.setOnClickListener(new View.OnClickListener() {
@@ -218,7 +220,7 @@ private void clickIt() {
                 int backgroundColor = cvArley.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("1");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("1"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvFelipe.setOnClickListener(new View.OnClickListener() {
@@ -227,7 +229,7 @@ private void clickIt() {
                 int backgroundColor = cvFelipe.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("2");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("2"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvDebora.setOnClickListener(new View.OnClickListener() {
@@ -236,7 +238,7 @@ private void clickIt() {
                 int backgroundColor = cvDebora.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("3");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("3"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvYasmin.setOnClickListener(new View.OnClickListener() {
@@ -245,7 +247,7 @@ private void clickIt() {
                 int backgroundColor = cvYasmin.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("4");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("4"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvLuiz.setOnClickListener(new View.OnClickListener() {
@@ -254,7 +256,7 @@ private void clickIt() {
                 int backgroundColor = cvLuiz.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("5");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("5"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvIsaac.setOnClickListener(new View.OnClickListener() {
@@ -263,7 +265,7 @@ private void clickIt() {
                 int backgroundColor = cvIsaac.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("6");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("6"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvJoao.setOnClickListener(new View.OnClickListener() {
@@ -272,7 +274,7 @@ private void clickIt() {
                 int backgroundColor = cvJoao.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("7");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("7"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvAirton.setOnClickListener(new View.OnClickListener() {
@@ -281,7 +283,7 @@ private void clickIt() {
                 int backgroundColor = cvAirton.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("8");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("8"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvLorenzo.setOnClickListener(new View.OnClickListener() {
@@ -290,7 +292,7 @@ private void clickIt() {
                 int backgroundColor = cvLorenzo.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)){
                     actionClick("9");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("9"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvSarah.setOnClickListener(new View.OnClickListener() {
@@ -299,7 +301,7 @@ private void clickIt() {
                 int backgroundColor = cvSarah.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!=(Color.GRAY)) {
                     actionClick("10");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("10"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
         cvNatalia.setOnClickListener(new View.OnClickListener() {
@@ -308,18 +310,22 @@ private void clickIt() {
                 int backgroundColor = cvNatalia.getCardBackgroundColor().getDefaultColor();
                 if(backgroundColor!= (Color.GRAY)){
                     actionClick("11");
-                }else Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
+                }else if(verifyUserCard("11"))Toast.makeText(ChooseActivity.this, "Você já avaliou essa equipe", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void actionClick(String i) {
-        if (user.getTime().equals(i)) {
+    private boolean verifyUserCard(String i) {
+        if(user_card.equals(i)){
             Toast.makeText(this, "Você participa dessa equipe!", Toast.LENGTH_SHORT).show();
-        } else {
-            equipe.setId(i);
-            startActivity(new Intent(ChooseActivity.this, EquipeActivity.class));
+            return false;
         }
+        return true;
+    }
+
+    private void actionClick(String i) {
+        equipe.setId(i);
+        startActivity(new Intent(ChooseActivity.this, EquipeActivity.class));
     }
 
     private void putId() {
