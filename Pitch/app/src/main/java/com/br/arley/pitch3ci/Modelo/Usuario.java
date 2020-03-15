@@ -8,6 +8,7 @@ public class Usuario {
     public static String email;
     DatabaseReference reference;
     private String nome;
+    private String time;
 
 
     public void setDinheiro(int dinheiro) {
@@ -50,4 +51,11 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 }

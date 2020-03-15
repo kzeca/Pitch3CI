@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String nome = dataSnapshot.child("usuarios").child(uid).child("nome").getValue(String.class);
+                String time = dataSnapshot.child("usuarios").child(uid).child("time").getValue(String.class);
                 if (nome != null) {
                     user.setNome(nome);
                     tvNome.setText("Bem Vindo, "+user.getNome());
@@ -54,6 +55,9 @@ public class HomeActivity extends AppCompatActivity {
                     user.setDinheiro(Integer.parseInt(saldo));
                     tvSaldo.setTextSize(2, 43.0f);
                     tvSaldo.setText("R$ " + user.getDinheiro());
+                }
+                if(time!= null){
+                    user.setTime(time);
                 }
             }
 

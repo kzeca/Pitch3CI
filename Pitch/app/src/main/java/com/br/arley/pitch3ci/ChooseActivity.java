@@ -1,19 +1,18 @@
 package com.br.arley.pitch3ci;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.br.arley.pitch3ci.Modelo.Equipe;
+import com.br.arley.pitch3ci.Modelo.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,34 +21,60 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ChooseActivity extends AppCompatActivity{
+public class ChooseActivity extends AppCompatActivity {
 
     DatabaseReference dataBase;
     static Equipe equipe;
+    Usuario user;
     FirebaseUser firebaseUser;
     String uid;
 
 
-    CardView cvArley;CardView cvFelipe;CardView cvDebora;
-    CardView cvYasmin;CardView cvLuiz;CardView cvIsaac;
-    CardView cvNatalia;CardView cvJoao;CardView cvAirton;
-    CardView cvLorenzo;CardView cvJose;CardView cvSarah;
+    CardView cvArley;
+    CardView cvFelipe;
+    CardView cvDebora;
+    CardView cvYasmin;
+    CardView cvLuiz;
+    CardView cvIsaac;
+    CardView cvNatalia;
+    CardView cvJoao;
+    CardView cvAirton;
+    CardView cvLorenzo;
+    CardView cvJose;
+    CardView cvSarah;
 
-    TextView investimentoArley;   TextView investimentoFelipe; TextView investimentoDebora;
-    TextView investimentoYasmin;  TextView investimentoLuiz;   TextView investimentoIsaac;
-    TextView investimentoNatalia; TextView investimentoJoao;   TextView investimentoAirton;
-    TextView investimentoLorenzo; TextView investimentoJose;   TextView investimentoSarah;
+    TextView investimentoArley;
+    TextView investimentoFelipe;
+    TextView investimentoDebora;
+    TextView investimentoYasmin;
+    TextView investimentoLuiz;
+    TextView investimentoIsaac;
+    TextView investimentoNatalia;
+    TextView investimentoJoao;
+    TextView investimentoAirton;
+    TextView investimentoLorenzo;
+    TextView investimentoJose;
+    TextView investimentoSarah;
 
-    TextView mediaStarArley;   TextView mediaStarFelipe; TextView mediaStarDebora;
-    TextView mediaStarYasmin;  TextView mediaStarLuiz;   TextView mediaStarIsaac;
-    TextView mediaStarNatalia; TextView mediaStarJoao;   TextView mediaStarAirton;
-    TextView mediaStarLorenzo; TextView mediaStarJose;   TextView mediaStarSarah;
+    TextView mediaStarArley;
+    TextView mediaStarFelipe;
+    TextView mediaStarDebora;
+    TextView mediaStarYasmin;
+    TextView mediaStarLuiz;
+    TextView mediaStarIsaac;
+    TextView mediaStarNatalia;
+    TextView mediaStarJoao;
+    TextView mediaStarAirton;
+    TextView mediaStarLorenzo;
+    TextView mediaStarJose;
+    TextView mediaStarSarah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
         equipe = new Equipe();
+        user = new Usuario();
         dataBase = FirebaseDatabase.getInstance().getReference();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         uid = firebaseUser.getUid();
@@ -80,19 +105,25 @@ public class ChooseActivity extends AppCompatActivity{
                 mediaStarSarah.setText(dataSnapshot.child("equipes").child("10").child("media_avaliacao").getValue(String.class));
                 mediaStarNatalia.setText(dataSnapshot.child("equipes").child("11").child("media_avaliacao").getValue(String.class));
 
-                investimentoJose.setText("R$ "+dataSnapshot.child("equipes").child("0").child("arrecadacao").getValue(String.class));
-                investimentoArley.setText("R$ "+dataSnapshot.child("equipes").child("1").child("arrecadacao").getValue(String.class));
-                investimentoFelipe.setText("R$ "+dataSnapshot.child("equipes").child("2").child("arrecadacao").getValue(String.class));
-                investimentoDebora.setText("R$ "+dataSnapshot.child("equipes").child("3").child("arrecadacao").getValue(String.class));
-                investimentoYasmin.setText("R$ "+dataSnapshot.child("equipes").child("4").child("arrecadacao").getValue(String.class));
-                investimentoLuiz.setText("R$ "+dataSnapshot.child("equipes").child("5").child("arrecadacao").getValue(String.class));
-                investimentoIsaac.setText("R$ "+dataSnapshot.child("equipes").child("6").child("arrecadacao").getValue(String.class));
-                investimentoJoao.setText("R$ "+dataSnapshot.child("equipes").child("7").child("arrecadacao").getValue(String.class));
-                investimentoAirton.setText("R$ "+dataSnapshot.child("equipes").child("8").child("arrecadacao").getValue(String.class));
-                investimentoLorenzo.setText("R$ "+dataSnapshot.child("equipes").child("9").child("arrecadacao").getValue(String.class));
-                investimentoSarah.setText("R$ "+dataSnapshot.child("equipes").child("10").child("arrecadacao").getValue(String.class));
-                investimentoNatalia.setText("R$ "+dataSnapshot.child("equipes").child("11").child("arrecadacao").getValue(String.class));
+                investimentoJose.setText("R$ " + dataSnapshot.child("equipes").child("0").child("arrecadacao").getValue(String.class));
+                investimentoArley.setText("R$ " + dataSnapshot.child("equipes").child("1").child("arrecadacao").getValue(String.class));
+                investimentoFelipe.setText("R$ " + dataSnapshot.child("equipes").child("2").child("arrecadacao").getValue(String.class));
+                investimentoDebora.setText("R$ " + dataSnapshot.child("equipes").child("3").child("arrecadacao").getValue(String.class));
+                investimentoYasmin.setText("R$ " + dataSnapshot.child("equipes").child("4").child("arrecadacao").getValue(String.class));
+                investimentoLuiz.setText("R$ " + dataSnapshot.child("equipes").child("5").child("arrecadacao").getValue(String.class));
+                investimentoIsaac.setText("R$ " + dataSnapshot.child("equipes").child("6").child("arrecadacao").getValue(String.class));
+                investimentoJoao.setText("R$ " + dataSnapshot.child("equipes").child("7").child("arrecadacao").getValue(String.class));
+                investimentoAirton.setText("R$ " + dataSnapshot.child("equipes").child("8").child("arrecadacao").getValue(String.class));
+                investimentoLorenzo.setText("R$ " + dataSnapshot.child("equipes").child("9").child("arrecadacao").getValue(String.class));
+                investimentoSarah.setText("R$ " + dataSnapshot.child("equipes").child("10").child("arrecadacao").getValue(String.class));
+                investimentoNatalia.setText("R$ " + dataSnapshot.child("equipes").child("11").child("arrecadacao").getValue(String.class));
+
+                String time = dataSnapshot.child("usuarios").child(uid).child("time").getValue(String.class);
+                if(time!=null){
+                    user.setTime(time);
+                }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
@@ -178,8 +209,12 @@ public class ChooseActivity extends AppCompatActivity{
     }
 
     private void actionClick(String i) {
+        if (user.getTime().equals(i)) {
+            Toast.makeText(this, "Você participa dessa equipe!", Toast.LENGTH_SHORT).show();
+        } else {
             equipe.setId(i);
-        startActivity(new Intent(ChooseActivity.this, EquipeActivity.class));
+            startActivity(new Intent(ChooseActivity.this, EquipeActivity.class));
+        }
     }
 
     private void putId() {
@@ -222,5 +257,5 @@ public class ChooseActivity extends AppCompatActivity{
         mediaStarAirton = findViewById(R.id.activity_choose_tv_avaliacaoAirton);
         mediaStarIsaac = findViewById(R.id.activity_choose_tv_avaliacaoIsaac);
     }
-
 }
+
