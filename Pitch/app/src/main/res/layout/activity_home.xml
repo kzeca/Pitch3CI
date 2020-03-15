@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71" />
+        app:layout_constraintGuide_percent="0.72" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline23"
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintGuide_percent="0.59" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline25"
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.46" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline18"
@@ -239,7 +239,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.92" />
+            app:layout_constraintGuide_percent="0.94520545" />
 
         <TextView
             android:id="@+id/textView6"
@@ -288,15 +288,25 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center|start"
-            android:text="Nome 1, Nome 2 e Nome 3"
+            android:text="Carregando..."
             android:textColor="#fff"
             android:textSize="13sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline35"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.285"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline37"
-            app:layout_constraintTop_toTopOf="@+id/guideline36"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="@+id/guideline36" />
+
+        <TextView
+            android:id="@+id/home_activity_tv_arrecadacao_primeiro"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline35"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline37"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_tv_nome_primeira_mais_investida" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -378,14 +388,25 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center|start"
-            android:text="Nome 1, Nome 2 e Nome 3"
+            android:text="Carregando..."
             android:textColor="#fff"
             android:textSize="13sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline41"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.285"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline47"
-            app:layout_constraintTop_toTopOf="@+id/guideline42"
+            app:layout_constraintTop_toTopOf="@+id/guideline42" />
+
+        <TextView
+            android:id="@+id/home_activity_tv_arrecadacao_segundo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline41"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline47"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_tv_nome_segunda_mais_investida"
             app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -465,13 +486,25 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center|start"
-            android:text="Nome 1, Nome 2 e Nome 3"
+            android:text="Carregando..."
             android:textColor="#fff"
             android:textSize="13sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline45"
             app:layout_constraintEnd_toEndOf="@+id/textView11"
+            app:layout_constraintHeight_percent="0.285"
             app:layout_constraintStart_toStartOf="@+id/guideline49"
             app:layout_constraintTop_toTopOf="@+id/guideline48" />
+
+        <TextView
+            android:id="@+id/home_activity_tv_arrecadacao_terceiro"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline45"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline49"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_tv_nome_terceira_mais_investida"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
