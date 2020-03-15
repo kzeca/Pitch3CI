@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.br.arley.pitch3ci.Modelo.Equipe;
 import com.br.arley.pitch3ci.Modelo.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,6 +21,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class HomeActivity extends AppCompatActivity {
 
     DatabaseReference dataBase;
@@ -27,6 +32,13 @@ public class HomeActivity extends AppCompatActivity {
     TextView tvSaldo;
     Usuario user;
     String uid;
+    ArrayList equipes;
+    TextView tvPrimeiroLugar;
+    TextView tvSegundoLugar;
+    TextView tvTerceiroLugar;
+    TextView tvArrecadacaoPrimeiroLugar;
+    TextView tvArrecadacaoSegundoLugar;
+    TextView tvArrecadacaoTerceiroLugar;
     FirebaseUser firebaseUser;
     Button button;
 
@@ -36,6 +48,12 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         tvNome = findViewById(R.id.activity_home_tv_nome);
         tvSaldo = findViewById(R.id.activity_home_tv_saldo);
+        tvPrimeiroLugar = findViewById(R.id.activity_home_tv_nome_primeira_mais_investida);
+        tvSegundoLugar = findViewById(R.id.activity_home_tv_nome_segunda_mais_investida);
+        tvTerceiroLugar = findViewById(R.id.activity_home_tv_nome_terceira_mais_investida);
+        tvArrecadacaoPrimeiroLugar = findViewById(R.id.home_activity_tv_arrecadacao_primeiro);
+        tvArrecadacaoSegundoLugar= findViewById(R.id.home_activity_tv_arrecadacao_segundo);
+        tvArrecadacaoTerceiroLugar = findViewById(R.id.home_activity_tv_arrecadacao_terceiro);
         user = LoginActivity.user;
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         uid = firebaseUser.getUid();
@@ -44,8 +62,10 @@ public class HomeActivity extends AppCompatActivity {
         dataBase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                equipes = new ArrayList<Equipe>();
                 String nome = dataSnapshot.child("usuarios").child(uid).child("nome").getValue(String.class);
                 String time = dataSnapshot.child("usuarios").child(uid).child("time").getValue(String.class);
+
                 if (nome != null) {
                     user.setNome(nome);
                     tvNome.setText("Bem Vindo, "+user.getNome());
@@ -59,6 +79,16 @@ public class HomeActivity extends AppCompatActivity {
                 if(time!= null){
                     user.setTime(time);
                 }
+
+                for(int i=0;i<12;i++){
+                    String integrantes = dataSnapshot.child("equipes").child(Integer.toString(i)).child("integrantes").getValue(String.class);
+                    int arrecadacao = Integer.parseInt(dataSnapshot.child("equipes").child(Integer.toString(i)).child("arrecadacao").getValue(String.class));
+                    Equipe equipe = new Equipe(integrantes, arrecadacao);
+                    equipes.add(equipe);
+                }
+                setRanking(equipes);
+
+
             }
 
 
@@ -78,6 +108,34 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ChooseActivity.class));
             }
         });
+    }
+
+    public void setRanking(ArrayList<Equipe> equipes){
+        Collections.sort(equipes);
+        if(equipes.get(0).getArrecadacao()>0){
+            tvPrimeiroLugar.setText(equipes.get(0).getIntegrantes());
+            tvArrecadacaoPrimeiroLugar.setText("R$ "+Integer.toString(equipes.get(0).getArrecadacao()));
+        }
+        else{
+            tvPrimeiroLugar.setText("Carregando...");
+            tvArrecadacaoPrimeiroLugar.setText("Carregando...");
+        }
+        if(equipes.get(1).getArrecadacao()>0){
+            tvSegundoLugar.setText(equipes.get(1).getIntegrantes());
+            tvArrecadacaoSegundoLugar.setText("R$ "+Integer.toString(equipes.get(1).getArrecadacao()));
+        }
+        else{
+            tvSegundoLugar.setText("Carregando...");
+            tvArrecadacaoSegundoLugar.setText("Carregando...");
+        }
+        if(equipes.get(2).getArrecadacao()>0){
+            tvTerceiroLugar.setText(equipes.get(2).getIntegrantes());
+            tvArrecadacaoTerceiroLugar.setText("R$ "+Integer.toString(equipes.get(2).getArrecadacao()));
+        }
+        else{
+            tvTerceiroLugar.setText("Carregando...");
+            tvArrecadacaoTerceiroLugar.setText("Carregando...");
+        }
     }
 
     @Override
