@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 if (nome != null) {
                     user.setNome(nome);
-                    tvNome.setText("Bem Vindo, "+user.getNome());
+                    tvNome.setText(getApplication().getString(R.string.bem_vindo)+", "+user.getNome());
                 }
                 String saldo = dataSnapshot.child("usuarios").child(uid).child("saldo").getValue(String.class);
                 if(saldo != null){
