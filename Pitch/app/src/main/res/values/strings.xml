@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Pitch3CI</string>
     <string name="avaliar">Avaliar</string>
+    <string name="investir">Investir</string>
+    <string name="avalie_a_equipe">Avalie a equipe</string>
+    <string name="digite_outro_valor">Digite outro valor</string>
+    <string name="outro_valor">Outro valor</string>
+    <string name="quanto_voc_deseja_investir">Quanto você deseja investir?</string>
+    <string name="saldo_dispon_vel">SALDO DISPONÍVEL</string>
+    <string name="bem_vindo">Bem Vindo</string>
+    <string name="carregando">Carregando...</string>
+    <string name="equipe_mais_investida">Equipe mais investida</string>
+    <string name="terceira_equipe_mais_investida">Terceira equipe mais investida</string>
+    <string name="segunda_equipe_mais_investida">Segunda equipe mais investida</string>
+    <string name="entrar">Entrar</string>
+    <string name="equipes">Equipes</string>
     <dimen name="dinheiro">13sp</dimen>
     <string name="title_activity_admin_activityy">AdminActivityy</string>
 </resources>
