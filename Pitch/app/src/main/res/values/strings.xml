@@ -2,4 +2,5 @@
     <string name="app_name">Pitch3CI</string>
     <string name="avaliar">Avaliar</string>
     <dimen name="dinheiro">13sp</dimen>
+    <string name="title_activity_admin_activityy">AdminActivityy</string>
 </resources>

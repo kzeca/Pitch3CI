@@ -75,10 +75,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(intent);
+                    if(user.getEmail().equals("")){//Admin email
+                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                    }
                     progressBar.setVisibility(View.GONE);
-
                     finish();
                 }else{
                     progressBar.setVisibility(View.INVISIBLE);
