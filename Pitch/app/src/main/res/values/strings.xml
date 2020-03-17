@@ -14,5 +14,8 @@
     <string name="segunda_equipe_mais_investida">Segunda equipe mais investida</string>
     <string name="entrar">Entrar</string>
     <string name="equipes">Equipes</string>
+    <string name="justifique_sua_avaliacao">Justifique seu investimento</string>
+    <string name="escreva_seu_texto_aqui">Escreva seu texto aqui</string>
+    <string name="confirmar">Confirmar</string>
     <dimen name="dinheiro">13sp</dimen>
 </resources>

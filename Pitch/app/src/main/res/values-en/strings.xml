@@ -15,4 +15,7 @@
     <string name="saldo_dispon_vel">BALANCE AVAILABLE</string>
     <string name="segunda_equipe_mais_investida">Second most invested team</string>
     <string name="terceira_equipe_mais_investida">Third most invested team</string>
+    <string name="escreva_seu_texto_aqui">Enter your text here</string>
+    <string name="confirmar">Confirm</string>
+    <string name="justifique_sua_avaliacao">Justify your investment</string>
 </resources>

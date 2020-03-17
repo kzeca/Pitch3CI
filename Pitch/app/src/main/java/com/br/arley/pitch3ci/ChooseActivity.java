@@ -185,7 +185,7 @@ public class ChooseActivity extends AppCompatActivity {
                             break;
                         case 11:
                             if(!equipe.equals("0")){
-                                cvNatalia.setCardBackgroundColor(Color.GRAY);
+                                cvNatalia.setCardBackgroundColor(0xFF888888);
                             }
                             break;
                     }
