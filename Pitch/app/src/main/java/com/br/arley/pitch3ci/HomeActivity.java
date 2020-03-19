@@ -40,12 +40,13 @@ public class HomeActivity extends AppCompatActivity {
     TextView tvArrecadacaoSegundoLugar;
     TextView tvArrecadacaoTerceiroLugar;
     FirebaseUser firebaseUser;
-    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
         tvNome = findViewById(R.id.activity_home_tv_nome);
         tvSaldo = findViewById(R.id.activity_home_tv_saldo);
         tvPrimeiroLugar = findViewById(R.id.activity_home_tv_nome_primeira_mais_investida);
@@ -117,24 +118,24 @@ public class HomeActivity extends AppCompatActivity {
             tvArrecadacaoPrimeiroLugar.setText("R$ "+Integer.toString(equipes.get(0).getArrecadacao()));
         }
         else{
-            tvPrimeiroLugar.setText("Carregando...");
-            tvArrecadacaoPrimeiroLugar.setText("Carregando...");
+            tvPrimeiroLugar.setText(getApplication().getString(R.string.carregando));
+            tvArrecadacaoPrimeiroLugar.setText(getApplication().getString(R.string.carregando));
         }
         if(equipes.get(1).getArrecadacao()>0){
             tvSegundoLugar.setText(equipes.get(1).getIntegrantes());
             tvArrecadacaoSegundoLugar.setText("R$ "+Integer.toString(equipes.get(1).getArrecadacao()));
         }
         else{
-            tvSegundoLugar.setText("Carregando...");
-            tvArrecadacaoSegundoLugar.setText("Carregando...");
+            tvSegundoLugar.setText(getApplication().getString(R.string.carregando));
+            tvArrecadacaoSegundoLugar.setText(getApplication().getString(R.string.carregando));
         }
         if(equipes.get(2).getArrecadacao()>0){
             tvTerceiroLugar.setText(equipes.get(2).getIntegrantes());
             tvArrecadacaoTerceiroLugar.setText("R$ "+Integer.toString(equipes.get(2).getArrecadacao()));
         }
         else{
-            tvTerceiroLugar.setText("Carregando...");
-            tvArrecadacaoTerceiroLugar.setText("Carregando...");
+            tvTerceiroLugar.setText(getApplication().getString(R.string.carregando));
+            tvArrecadacaoTerceiroLugar.setText(getApplication().getString(R.string.carregando));
         }
     }
 

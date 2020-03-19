@@ -18,4 +18,5 @@
     <string name="escreva_seu_texto_aqui">Escreva seu texto aqui</string>
     <string name="confirmar">Confirmar</string>
     <dimen name="dinheiro">13sp</dimen>
+    <string name="title_activity_teste">TesteActivity</string>
 </resources>
