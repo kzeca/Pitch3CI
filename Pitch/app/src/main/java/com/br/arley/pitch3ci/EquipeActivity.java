@@ -114,6 +114,7 @@ public class EquipeActivity extends AppCompatActivity {
                         dataBase.child("equipes").child(equipe.getId()).child("soma_avaliacao").setValue(Integer.toString(avaliacao+equipe.getSomaAvaliacao()));
                         dataBase.child("equipes").child(equipe.getId()).child("n_avaliacao").setValue(Integer.toString(equipe.getNumeroAvaliadores()));
                         dataBase.child("usuarios").child(uid).child("historico").child("avaliacoes").child(equipe.getId()).setValue(Integer.toString(avaliacao));
+                        dataBase.child("usuarios").child(uid).child("historico").child("investimentos").child(equipe.getId()).setValue(Integer.toString(valor_a_pagar));
                         float media = (float)(equipe.getSomaAvaliacao()+avaliacao)/(equipe.getNumeroAvaliadores());
                         BigDecimal aNumber = new BigDecimal(media);
                         aNumber = aNumber.setScale(1, BigDecimal.ROUND_HALF_UP);

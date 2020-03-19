@@ -15,5 +15,4 @@
     <string name="entrar">Entrar</string>
     <string name="equipes">Equipes</string>
     <dimen name="dinheiro">13sp</dimen>
-    <string name="title_activity_admin_activityy">AdminActivityy</string>
 </resources>

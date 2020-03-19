@@ -75,17 +75,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                    if(user.getEmail().equals("")){//Admin email
-                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
-                        startActivity(intent);
-                    }
-                    else{
-                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                    }
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
                     progressBar.setVisibility(View.GONE);
                     finish();
-                }else{
+                }
+                else if(user.getEmail().equals("admin") && user.getRa().equals("123")){
+                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                    progressBar.setVisibility(View.GONE);
+                    finish();
+                }
+                else{
                     progressBar.setVisibility(View.INVISIBLE);
                     Toast.makeText(LoginActivity.this, "Dica: Login seu email e senha seu RA", Toast.LENGTH_LONG).show();
                 }
