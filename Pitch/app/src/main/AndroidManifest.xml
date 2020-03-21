@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".VisualizarPdfActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
         <activity
